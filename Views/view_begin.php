@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name = "author" content="JoePohhhrthos">
-    <meta name="description" content="Stand de confiseries du BDE">
+    <meta name="desbcription" content="Stand de confiseries du BDE">
     <meta name="keywords" content="bde, stand, confiseries, snack, boissons, iut, villetaneuse, iutv, université, paris, paris13, sorbonne, paris nord">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
