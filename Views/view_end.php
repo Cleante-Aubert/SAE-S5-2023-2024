@@ -6,7 +6,7 @@
 <!--Le pieds de page-->
 
 <footer>
-    <div class="contenu-footer">
+    <div class="contennu-footer">
             <a href="https://www.univ-paris13.fr/" class="logo-univ"><img style="border-radius: 4px;" src="Content/img/logo_uspn.jpg" alt="Logo Université Sorbonne Paris Nord" width="100" height="50"></a>
 
             <div class="aide">
