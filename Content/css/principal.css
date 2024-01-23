@@ -109,3 +109,12 @@ a[title="Se déconnecter"]{
     border-color: #053B76;
 }
 
+.accueil_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo_sc {
+    margin-right: 10px;
+}

@@ -2,9 +2,8 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content="JoePohhhrthos">
-    <meta name="description" content="Stand de confiseries du BDE">
-    <meta name="keywords" content="bde, stand, confiseries, snack, boissons, iut, villetaneuse, iutv, université, paris, paris13, sorbonne, paris nord">
+    <meta name="author" content="Space Ciné">
+    <meta name="description" content="Space Ciné">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Space Ciné</title>
@@ -19,7 +18,7 @@
 <header class="accueil_header">
     <nav class="accueil_nav">
         <div class="contenu-menu">
-            <a href="?controller=home&action=home"><img class="logo_bde" src="../Content/img/logo_SpaceCine.png" alt="logo-bde" width="70px" height="70px"></a>
+            <a href="?controller=home&action=home"><img class="logo_sc" src="../Content/img/logo_SpaceCine.png" alt="logo-cs" width="70px" height="70px"></a>
             <a href="?controller=list&action=film" title="Films" class="deco">Film</a>
             <a href="?controller=list&action=actu" title="Actu" class="deco">Actu</a>
             <a href="?controller=auth&action=form_login" title="Mon Espace" class="deco">Mon Espace</a>
