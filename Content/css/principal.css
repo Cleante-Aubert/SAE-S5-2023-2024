@@ -1,0 +1,111 @@
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.accueil_header{
+    background-color: #085186;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+header nav {
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 15px;
+}
+
+
+header nav div a{
+    text-decoration: none;
+    color: #E2F6F0;
+    padding: 15px;
+    font-size:medium;
+    font-weight : 420;
+    margin: 10px;
+}
+
+.deco{
+    border-radius: 10px;
+}
+
+.deco:hover{
+    background-color: #053B76;
+}
+
+
+
+main{
+    width: 100%;
+    height: 100%;
+}
+
+header nav .contenu-menu a img.logo_bde{
+    border-radius: 50%;
+}
+
+
+
+
+table td, table th{
+    border: 1px solid black;
+    padding: 5px;
+}
+
+
+
+a[title="Se connecter / S'inscrire"]{
+    /* ne marche pas trop 
+    float: left;
+    width: 20%;
+    */
+    background-color: #557BAB;
+    padding: 15px;
+}
+
+a[title="Se déconnecter"]{
+    /* ne marche pas trop 
+    float: left;
+    width: 20%;
+    */
+    background-color: #d10000;
+    padding: 15px;
+}
+
+.decore_white{
+    color:white;
+}
+
+.p_btn{
+    margin: 10px;
+    background-color: #085186 !important;
+    border :1px solid #085186 !important;
+    color: white !important;
+}
+
+.p_btn_back{
+    background-color: #F2F2F2;
+    border :1px solid #085186;
+    color: black;
+    border: #000;
+    border-radius: 30px;
+}
+
+
+.p_btn:hover, .p_btn_checked{
+    background-color:#053B76 !important;
+    border-color: #053B76 !important;
+}
+
+.p_btn:active{
+    background-color:#053B76;
+    border-color: #053B76;
+}
+
+.p_btn:focus {
+    background-color:#053B76;
+    border-color: #053B76;
+}
+

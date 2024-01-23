@@ -1,0 +1,60 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+main{
+    width: 100%;
+    height: 90%;
+    background-color: #E2F6F0;
+}
+
+.snacks{
+    width: 95%;
+     margin-bottom: 20px;
+
+}
+
+h1{
+    text-align: center;
+    margin: auto;
+}
+section div{
+    text-align: center;
+    width: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: auto;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin: auto;
+}
+
+section div ul{
+    padding: 15px;
+    margin: auto;
+    background-color: white;
+    text-align: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 150px;
+    height: 205px;
+
+}
+
+section div ul li img {
+    width: 100%;
+    height:100%;
+}
+
+div.liste_snacks{
+    margin-bottom: 100px;
+}
+
+.prix{
+    color: #15AABF;
+}
