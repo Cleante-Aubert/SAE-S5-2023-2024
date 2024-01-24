@@ -3,6 +3,11 @@ require_once "Models/Model_auth.php";
 
 class Controller_auth extends Controller {
 
+    public function action_form_login() {
+        $data = ["message"=>""];
+        $this->render("login", $data);
+    }
+
     public function action_form_signup() {
         $data = ["message"=>""];
         $this->render("signup", $data);
