@@ -8,7 +8,7 @@
 <footer>
     <div class="contenu-footer">
         <a href="https://www.univ-paris13.fr/" class="logo-univ">
-            <img style="border-radius: 4px;" src="../Content/img/logo_uspn.jpg" alt="Logo Université Sorbonne Paris Nord" width="100" height="50">
+            <img style="border-radius: 4px;" src="../Content/img/Logo-USPN-2023.jpg" alt="Logo Université Sorbonne Paris Nord" width="100" height="50">
         </a>
 
         <div class="aide">
