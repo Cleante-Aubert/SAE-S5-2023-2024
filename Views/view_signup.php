@@ -3,7 +3,7 @@
 <?php else : ?>
   <?php require "view_begin.php";?>
 <?php endif ?>
-<link rel="stylesheet" href="../Content/css/signup.css">
+<link rel="stylesheet" href="Content/css/signup.css">
 
 <section class="inscription">
   <h1 class="text-center mb-0">Formulaire d'inscription</h1>
@@ -12,23 +12,28 @@
 
     <div class="form-group ">
       <label class="p-label" for="name">Nom *</label>
-      <input type="text" name="name" id="name" maxlength="40" value="" class="form-control input-lg ">
+      <input type="text" name="NomUtilisateur" id="name" maxlength="40" value="" class="form-control input-lg ">
     </div>
 
     <div class="form-group ">
       <label class="p-label" for="firstname">Prénom *</label>
-      <input type="text" name="firstname" id="firstname" maxlength="40" value="" class="form-control input-lg">
+      <input type="text" name="PrenomUtilisateur" id="firstname" maxlength="40" value="" class="form-control input-lg">
+    </div>
+
+    <div class="form-group ">
+        <label class="p-label" for="pseudo">Pseudo *</label>
+        <input type="text" name="PseudoUtilisateur" id="pseudo" maxlength="40" value="" class="form-control input-lg">
     </div>
 
 
     <div class="form-group">
         <label class="p-label" for="createEmail">Email *</label>
-        <input type="email" name="email" id="createEmail" maxlength="60" value="" class="form-control input-lg">
+        <input type="email" name="Email" id="createEmail" maxlength="60" value="" class="form-control input-lg">
     </div>
 
       <div class="form-group">
           <label class="p-label" for="createPassword">Mot de passe *</label>
-          <input type="password" name="password" id="createPassword" minlength="8" maxlength="64" class="form-control input-lg">
+          <input type="password" name="MotDePasse" id="createPassword" minlength="8" maxlength="64" class="form-control input-lg">
       </div>
 
       <div class="form-group ">
@@ -37,7 +42,7 @@
       </div>
 
     <div class="d-flex justify-content-end p-2">
-        <input type="submit" class="btn btn-md p_btn" value="S'identifier">
+        <input type="submit" class="btn btn-md p_btn" value="Créer le compte" name="submit">
     </div>
 
   </form>

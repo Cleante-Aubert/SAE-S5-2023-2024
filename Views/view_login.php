@@ -1,5 +1,5 @@
 <?php require "view_begin.php";?>
-<link rel="stylesheet" href="../Content/css/login.css">
+<link rel="stylesheet" href="Content/css/login.css">
 
     <section class="connexion">
         <div class="se_connecter">

@@ -1,5 +1,5 @@
 <!-- JS langue-->
-<?php echo '<script src="../Utils/langue.js"></script>'; ?>
+<?php echo '<script src="Utils/langue.js"></script>'; ?>
 
 <!-- Fin du corps de la page -->
 
@@ -8,7 +8,7 @@
 <footer>
     <div class="contenu-footer">
         <a href="https://www.univ-paris13.fr/" class="logo-univ">
-            <img style="border-radius: 4px;" src="../Content/img/logo_uspn.jpg" alt="Logo Université Sorbonne Paris Nord" width="100" height="50">
+            <img style="border-radius: 4px;" src="Content/img/logo_uspn.jpg" alt="Logo Université Sorbonne Paris Nord" width="100" height="50">
         </a>
 
         <div class="aide">
@@ -30,8 +30,8 @@
 
         <div class="reseaux-sociaux">
             <h5>REJOINS-NOUS</h5>
-            <a href="#"><img src="../Content/img/logo_instagram.png" width="40px" height="40px"></a>
-            <a href="#"><img src="../Content/img/logo_tiktok.png" width="40px" height="40px"></a>
+            <a href="#"><img src="Content/img/logo_instagram.png" width="40px" height="40px"></a>
+            <a href="#"><img src="Content/img/logo_tiktok.png" width="40px" height="40px"></a>
         </div>
     </div>
 </footer>

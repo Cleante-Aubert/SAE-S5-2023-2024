@@ -1,7 +1,7 @@
 <?php
 
 //Pour avoir la fonction e()
-require_once "Utils/functions.php";
+require_once "Utils/function.php";
 //Inclusion du modèle
 require_once "Models/Model.php";
 //Inclusion de la classe Controller
@@ -12,7 +12,7 @@ require_once "Controllers/Controller.php";
 session_start();
 
 //Liste des contrôleurs -- A RENSEIGNER
-$controllers = ['home', 'list', 'set', 'auth'];
+$controllers = ['home','auth'];
 //Nom du contrôleur par défaut-- A RENSEIGNER
 $controller_default = "home";
 
