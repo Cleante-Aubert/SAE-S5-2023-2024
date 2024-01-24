@@ -18,7 +18,7 @@
             <a href="#" target="_blank" rel="noopener noreferrer">Nous contacter</a>
         </div>
 
-        <div class="bde">
+        <div class="sc">
             <h5>Space Ciné</h5>
             <a href="#">Qui sommes-nous ?</a>
         </div>
