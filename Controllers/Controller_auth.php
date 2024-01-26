@@ -105,7 +105,7 @@ class Controller_auth extends Controller {
                 "lien_retour" => "?controller=home&action=home",
                 "message" => "Vous avez été déconnecté."
             ];
-            $this->render("message", $data);
+            $this->render("login", $data);
         }
         else{
             $data = ["Vous n'êtes pas connectés"];
