@@ -19,7 +19,7 @@
         </div>
 
         <div class="sc">
-            <h5>Space Ciné</h5>
+            <h5>SPACE CINÉ</h5>
             <a href="#">Qui sommes-nous ?</a>
         </div>
 

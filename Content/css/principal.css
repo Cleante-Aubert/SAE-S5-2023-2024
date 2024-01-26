@@ -21,7 +21,7 @@ body{
     color: white;
     text-align: center;
 }*/
-.films-a-une, .actualites, .bandes-annonces {
+.header-section {
     background-color: #085186;
 
     width: 97%;
@@ -43,7 +43,7 @@ body{
     overflow-y: auto;
 }
 .bienvenue-section {
-    background-image: url("../img/space.png"); /* Utilisation de "../" pour remonter d'un niveau si le fichier CSS est dans un sous-dossier */
+    background-image: url("../img/space.jpg"); /* Utilisation de "../" pour remonter d'un niveau si le fichier CSS est dans un sous-dossier */
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -180,4 +180,36 @@ a[title="Se déconnecter"]{
 
 .logo_sc {
     margin-right: 10px;
+}
+
+.movie_list{
+    width: 200px;
+    height: 300px;
+    margin: auto;
+    padding-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.movie_list .card {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+
+    border-radius: 50%;
+    background-color: #085186;
+}
+
+.carousel-inner .carousel-item {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-inner .carousel-item.active {
+    opacity: 1;
 }

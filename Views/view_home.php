@@ -8,22 +8,10 @@
 </div>
 
 <!-- Section 2 : Films à la une et Dernières sorties -->
-<section class="films-section">
-    <p class="films-a-une">Films à la une et Dernières sorties</p>
-    <div class="scrolling-container">
-        <?php foreach ($filmsAUne as $film): ?>
-            <!-- Afficher les détails des films à la une -->
-            <div class="film">
-                <h4><?php echo $film['Titre']; ?></h4>
-                <!-- Ajoutez d'autres détails si nécessaire -->
-            </div>
-        <?php endforeach; ?>
-    </div>
-
-</section>
+<?php require "view_movie_list.php"; ?>
 
 <!-- Section 3 : Actualités liées au cinéma -->
-<section class="actualites-section">
+<section class="header-section">
     <p class="actualites">Actualités liées au cinéma</p>
     <div class="scrolling-container">
     <?php foreach ($actualitesCinema as $actualite): ?>
@@ -38,7 +26,7 @@
 
 <!-- Section 4 : Bandes annonces de films -->
 <section >
-    <p class="bandes-annonces">Bandes annonces de films</p>
+    <p class="header-section">Bandes annonces de films</p>
     <?php foreach ($bandesAnnonces as $bandeAnnonce): ?>
         <!-- Afficher les détails des bandes annonces -->
         <div class="bande-annonce">
