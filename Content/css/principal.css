@@ -23,9 +23,8 @@ body{
 }*/
 .header-section {
     background-color: #085186;
-
-    width: 97%;
-
+    width: auto;
+    font-size: 1.25rem;
     margin: 20px auto;
     height: 50px;
     display: flex;
@@ -72,8 +71,6 @@ color: white;
 
 }
 
-
-
 header nav {
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -97,8 +94,6 @@ header nav div a{
 .deco:hover{
     background-color: #053B76;
 }
-
-
 
 main{
     width: 100%;
@@ -190,6 +185,8 @@ a[title="Se déconnecter"]{
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .movie_list .card {
@@ -212,4 +209,77 @@ a[title="Se déconnecter"]{
 
 .carousel-inner .carousel-item.active {
     opacity: 1;
+}
+
+#faq {
+    overflow: hidden;
+    list-style-type: none;
+}
+
+#faq #faq-list, #faq-list-main, #faq-list-title{
+    padding: 0;
+    list-style: none;
+}
+
+#faq #faq-list .question{
+    padding: 18px 0;
+    display: block;
+    position: relative;
+    font-size: 15px;
+    line-height: 1;
+    font-weight: 300;
+    padding-right: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+#faq-list-main a{
+    padding: 18px 0;
+    display: block;
+    position: relative;
+}
+
+#faq-list-title a{
+    padding: 18px 0;
+    display: block;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+}
+
+#faq #faq-list i, #faq-list-main i, #faq-list-title i{
+    font-size: 24px;
+    position: absolute;
+    right: 0;
+    top: 16px;
+}
+
+#faq #faq-list p {
+    margin-bottom: 20px;
+}
+
+#faq #faq-list a.collapse, #faq-list-main a.collapse, #faq-list-title a.collapse{
+    color: #085186;
+}
+
+#faq #faq-list a.collapsed, #faq-list-main a.collapsed, #faq-list-title a.collapsed {
+    color: #000;
+}
+
+#faq #faq-list a.collapsed i::before, #faq-list-main a.collapsed i::before, #faq-list-title a.collapsed i::before{
+    content: "\f2c7" !important;
+}
+
+.white-icon {
+    fill: white;
+}
+
+.row {
+    --bs-gutter-x: 0 !important;
+}
+
+.info-card{
+    text-align: center;
+    background: gray;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: rgba(85, 123, 171, .5);
 }
