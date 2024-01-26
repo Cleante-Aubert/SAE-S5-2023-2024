@@ -18,13 +18,14 @@ class Model_commentaires extends Model {
         return $requete->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function update_avis($ID_user,$Com){
+    public function update_avis($ID_user,$Com,$ID_film){
         $bd = $this->getBd();
-        $requete = $bd>prepare('UPDATE critiques SET Commentaires = :com WHERE UtilisateurID = :id ');
+        $requete = $bd->prepare('UPDATE critiques SET Commentaires = :com WHERE UtilisateurID = :id AND FilmID = :film');
 
         //Remplacement des marqueurs de place par les valeurs
         $requete->bindValue(':id', $ID_user);
         $requete->bindValue(':com', $Com);
+        $requete->bindValue(':film', $ID_film);
 
         //Exécution de la requête
         $requete->execute();
@@ -32,6 +33,14 @@ class Model_commentaires extends Model {
         return (bool) $requete->rowCount();
     }
 
+    public function remove_avis($ID_user,$ID_film){
+        $bd = $this->getBd();
+        $requete = $bd->prepare('DELETE FROM critiques WHERE UtilisateurID = :id AND FilmID = :film  ');
+        $requete->bindValue(':id', $ID_user);
+        $requete->bindValue(':film', $ID_film);
+        $requete->execute();
+        return (bool) $requete->rowCount();
+    }
 
 
 
