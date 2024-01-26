@@ -11,14 +11,14 @@ class Model_commentaires extends Model {
         return self::$instance;
     }
 
-    public function getAllCommentaires(){
+    public function getAllAvis(){
         $bd = $this->getBd();
         $requete = $bd->prepare("SELECT Commentaire FROM critiques");
         $requete->execute();
         return $requete->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function update_commentaire($ID_user,$Com){
+    public function update_avis($ID_user,$Com){
         $bd = $this->getBd();
         $requete = $bd>prepare('UPDATE critiques SET Commentaires = :com WHERE UtilisateurID = :id ');
 
