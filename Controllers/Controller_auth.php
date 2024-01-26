@@ -17,12 +17,15 @@ class Controller_auth extends Controller {
         $m = Model_auth::getExtendedModel();
 
         if (isset($_POST['submit']) ) {
-            if ( $_POST['NomUtilisateur'] != "" && $_POST['PrenomUtilisateur'] != "" && $_POST['PseudoUtilisateur'] != "" && $_POST['Email'] != "" && $_POST['MotDePasse'] != "" ){
+            if ( isset($_POST['NomUtilisateur']) && isset($_POST['PrenomUtilisateur']) && isset($_POST['PseudoUtilisateur']) && isset($_POST['Email']) && isset($_POST['MotDePasse'] )){
 
-                $listePseudos = $m->getUsernames();
-                foreach ($listePseudos as $value){
+                $listePseudosAndEmails = $m->getUsernamesAndEmails();
+                foreach ($listePseudosAndEmails as $value){
                     if ($value["PseudoUtilisateur"] == $_POST['PseudoUtilisateur']){
                         $data = ["message"=>"Le pseudo que vous avez choisi est déjà pris. Veuillez en choisir un autre."];
+                        $this->render("signup", $data);
+                    } elseif ($value["Email"] == $_POST["Email"]){
+                        $data = ["message"=>"L'adresse mail que vous avez renseigné est déjà attribué. Veuillez en utiliser un autre."];
                         $this->render("signup", $data);
                     }
                 }
@@ -32,8 +35,8 @@ class Controller_auth extends Controller {
                 foreach ($attributs as $val){
                     $infos[$val] = $_POST[$val];
                 }
-                $infos['MotDePasse'] = md5($_POST['MotDePasse']);
-                // $infos['pdp'] = "Content/Images/Pdp/no-pdp.jpg"; // Partie à développer plus tard avec les photos de profil
+                $infos['MotDePasse'] = password_hash($_POST['MotDePasse'], PASSWORD_DEFAULT );
+                //$infos['pdp'] = "Content/Images/Pdp/no-pdp.jpg"; // Partie à développer plus tard avec les photos de profil
                 $m->inscription($infos);
                 $data = ["message"=>"Votre compte a bien été crée, vous pouvez vous connecter"];
                 $this->render("login", $data);
@@ -48,6 +51,50 @@ class Controller_auth extends Controller {
             $this->render("signup", $data);
         }
     }
+
+
+    public function action_login() {
+        $m = Model_auth::getExtendedModel();
+
+        if (isset($_POST["submit"])) {
+            if ( isset($_POST['identifiant']) && isset($_POST['password']) ) {
+                $data =$m->getUsernamesAndEmails();
+
+                $usernames = array_column($data, "PseudoUtilisateur");
+                $emails = array_column($data, "Email");
+
+                if ( in_array($_POST["identifiant"], $usernames) or in_array($_POST["identifiant"], $emails) ) {
+                    $user = $m->getInformationsCompte($_POST["identifiant"]);
+                    if (password_verify($_POST["password"], $user["MotDePasse"])) {
+                    // Remplissage de la session
+                        $_SESSION["connected"] = true;
+                        $_SESSION["Id"] = $user["UtilisateurID"];
+                        $_SESSION["Nom"] = $user["NomUtilisateur"];
+                        $_SESSION["Prenom"] = $user["PrenomUtilisateur"];
+                        $_SESSION["Pseudo"] = $user["PseudoUtilisateur"];
+                        $_SESSION["Email"] = $user["Email"];
+
+                    // Redirection
+                        $data = ["message"=>"Authentification réussie."];
+                        $this->render("test", $data);
+                    } else {
+                        $data = ["message"=>"Mot de passe incorrect"];
+                        $this->render("login", $data);
+                    }
+                } else {
+                    $data = ["message"=>"Le mail/identifiant renseigné n'existe pas. Veuillez en utiliser un autre."];
+                    $this->render("login", $data);
+                }
+            } else {
+                $data = ["message"=>"Veuillez renseigner les champs pour vous authentifier."];
+                $this->render("login", $data);
+            }
+        } else {
+            $data = ["message"=>""];
+            $this->render("login", $data);
+        }
+    }
+
     public function action_default() {
         $this->action_form_signup();
     }

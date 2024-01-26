@@ -10,8 +10,8 @@
 
             <form action="?controller=auth&action=login" method="post" >
             <div class="form-group">
-                  <label class="p-label" for="createEmail">Email </label>
-                  <input type="email" name="email" id="createEmail" maxlength="60" value="" class="form-control input-lg">
+                  <label class="p-label" for="createEmail">Nom d'utilisateur ou Email</label>
+                  <input type="text" name="identifiant" id="createEmail" maxlength="60" value="" class="form-control input-lg">
             </div>
 
             <div class="form-group">
@@ -19,9 +19,13 @@
                   <input type="password" name="password" id="createPassword" minlength="8" maxlength="64" class="form-control input-lg">
             </div>
 
+            <!-- à changer au front les bgs -->
+            <p style="color:green"> <?= e($data["message"]) ?> </p>
+            <!-- à changer au front les bgs -->
+
             <p><a href="?controller=auth&action=form_oublimdp">Mot de passe oublié ? </a></p> <br>
             <div class="d-flex justify-content-end p-2">
-                    <input type="submit" class="btn btn-md p_btn" value="Connexion">
+                    <input type="submit" class="btn btn-md p_btn" value="Connexion" name="submit">
             </div>
             </br>
 

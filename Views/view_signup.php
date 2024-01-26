@@ -46,6 +46,11 @@
     </div>
 
   </form>
+
+  <!-- à changer au front les bgs -->
+  <p style="color:red"> <?= e($data["message"]) ?> </p>
+  <!-- à changer au front les bgs -->
+
   </div>
 </section>
 

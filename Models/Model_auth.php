@@ -23,11 +23,19 @@ class Model_auth extends Model {
         return (bool) $requete->rowCount();
     }
 
-    public function getUsernames() {
+    public function getUsernamesAndEmails() {
         $bd = $this->getBd();
-        $requete = $bd->prepare("SELECT PseudoUtilisateur FROM utilisateur");
+        $requete = $bd->prepare("SELECT PseudoUtilisateur,Email FROM utilisateur");
         $requete->execute();
         return $requete->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getInformationsCompte($identifiant) {
+        $bd = $this->getBd();
+        $requete = $bd->prepare("SELECT * FROM utilisateur WHERE PseudoUtilisateur = :identifiant OR Email = :identifiant");
+        $requete->bindValue(':identifiant', $identifiant);
+        $requete->execute();
+        return $requete->fetch(PDO::FETCH_ASSOC);
     }
 
 }

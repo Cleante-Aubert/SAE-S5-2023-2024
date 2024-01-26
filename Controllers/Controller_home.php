@@ -3,7 +3,7 @@
 class Controller_home extends Controller {
 
     public function action_home(){
-        $data = [];
+        $data = ["message"=>""];
         $this->render("login", $data);
     }
     public function action_default()
