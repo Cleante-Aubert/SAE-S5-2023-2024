@@ -95,6 +95,25 @@ class Controller_auth extends Controller {
         }
     }
 
+    public function action_logout(){
+        if(isset($_SESSION['connected']) && $_SESSION['connected'] !== null ){
+            $_SESSION = array();
+            session_destroy();
+            $data = [
+                "title" => "Déconnexion",
+                "str_lien_retour" => "Retour à la page d'accueil",
+                "lien_retour" => "?controller=home&action=home",
+                "message" => "Vous avez été déconnecté."
+            ];
+            $this->render("login", $data);
+        }
+        else{
+            $data = ["Vous n'êtes pas connectés"];
+            $this->render("message",$data);
+        }
+    }
+
+
     public function action_default() {
         $this->action_form_signup();
     }
