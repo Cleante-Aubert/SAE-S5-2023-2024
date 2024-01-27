@@ -10,6 +10,7 @@ CREATE TABLE Film (
     DateSortie DATE,
     DureeFilm TIME,
     GenreFilm VARCHAR(50),
+    AfficheFilm VARCHAR(50),
     BandeAnnonce VARCHAR(255),
     Synopsis TEXT,
     NoteMoyenne DECIMAL (3, 1),
