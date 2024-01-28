@@ -36,6 +36,7 @@
                                         </a>
                                     </div>
                                 </div>
+                                <h6 style="display: flex;justify-content: space-evenly"><?= e($value2['Titre']) ?></h6>
                             </div>
                         <?php endforeach; ?>
                     </div>
