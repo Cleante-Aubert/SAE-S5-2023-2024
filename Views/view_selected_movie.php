@@ -6,8 +6,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="../Content/css/animate/animate.css">
-        <script src="../Content/js/wow/wow.js"></script>
+        <link rel="stylesheet" href="Content/css/animate/animate.css">
+        <script src="Content/js/wow/wow.js"></script>
         <script>
             new WOW().init();
         </script>
@@ -19,7 +19,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h1 class="text-center">Napoleon</h1>
+                <h1 class="text-center"><?= e($data["Titre"]) ?></h1>
                 <!-- Star Rating -->
                 <div class="text-center">
                     <span class="text-warning" style="font-size: 2em;">&#9733;</span>
@@ -36,17 +36,17 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="card rounded" style="width: 200px; height: 300px;">
-                        <img src="../Content/img/Napoleon.jpg" class="card-img" alt="Card Image">
+                        <img src="<?= e($data["Affiche"]) ?>" class="card-img" alt="<?= e($data["Titre"]) ?>">
                     </div>
                 </div>
                 <div class="col-md-6 mx-auto">
                     <div class="row">
                         <div class="col">
-                            <p>17 mars 2023 en salle | 1h 30min | Comédie dramatique</p>
+                            <p> <?= e(strftime('%d %B %Y', strtotime($data["DateSortie"]))) ?> | <?= e($data["DureeFilm"]) ?> | <?= e($data["GenreFilm"]) ?></p>
                             <p>De Norman Thavaud</p>
                             <p>Avec Norman Thavaud, Mallory Wanecque, Julia Piaton</p>
                             <h1>Synopsis</h1>
-                            <p>Pendant ce temps, Maximilien de Robespierre fait régner la Terreur mais les députés de la Convention le mettent en cause et le chassent en juillet 1794 : Robespierre tente alors de se suicider mais échoue, et termine guillotiné. Les dirigeants français mettent fin à la Terreur et libèrent les prisonniers, dont Joséphine de Beauharnais, une veuve aristocrate. En octobre 1795, Barras confie à Bonaparte la mission de mater l'insurrection royaliste de vendémiaire : Bonaparte fait tirer aux canons en pleine rue, ce qui lui permet de gagner en popularité dans le camp républicain.</p>
+                            <p><?= e($data["Synopsis"]) ?></p>
                         </div>
                     </div>
                 </div>
@@ -57,12 +57,12 @@
                         <div class="row">
                             <div class="col-6">
                                 <div class="card" style="width: 120px; height: 120px;">
-                                    <img src="../Content/img/Kemar.png" alt="Image 1" class="card-img-top img-fluid rounded" style="width: 120px; height: 120px;">
+                                    <img src="Content/img/acteurs/Kemar.png" alt="Image 1" class="card-img-top img-fluid rounded" style="width: 120px; height: 120px;">
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="card" style="width: 120px; height: 120px;">
-                                    <img src="../Content/img/Kemar.png" alt="Image 2" class="card-img-top img-fluid rounded" style="width: 120px; height: 120px;">
+                                    <img src="Content/img/acteurs/Kemar.png" alt="Image 2" class="card-img-top img-fluid rounded" style="width: 120px; height: 120px;">
                                 </div>
                             </div>
                         </div>
@@ -70,12 +70,12 @@
                         <div class="row mt-3">
                             <div class="col-6">
                                 <div class="card" style="width: 120px; height: 120px;">
-                                    <img src="../Content/img/Kemar.png" alt="Image 3" class="card-img-top img-fluid rounded" style="width: 120px; height: 120px;">
+                                    <img src="Content/img/acteurs/Kemar.png" alt="Image 3" class="card-img-top img-fluid rounded" style="width: 120px; height: 120px;">
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="card" style="width: 120px; height: 120px;">
-                                    <img src="../Content/img/Kemar.png" alt="Image 4" class="card-img-top img-fluid rounded" style="width: 120px; height: 120px;">
+                                    <img src="Content/img/acteurs/Kemar.png" alt="Image 4" class="card-img-top img-fluid rounded" style="width: 120px; height: 120px;">
                                 </div>
                             </div>
                         </div>
@@ -85,32 +85,35 @@
         </div>
         </br>
 
-        <div class="row">
-            <div class="col-md-1 mb-4"></div>
-            <div class="col-md-10 mb-4 py-4">
-                <p class="header-section">Bande annonce</p>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 class="text-center">Bande annonce</h1>
+                </div>
             </div>
-            <div class="col-md-1 mb-4"></div>
         </div>
 
         <div class="container mt-5">
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <!-- Utilisez la classe "rounded" de Bootstrap pour les coins arrondis -->
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/C6qvbnbmflc" frameborder="0" allowfullscreen class="mx-auto d-block rounded"></iframe>
+                    <iframe width="560" height="315" src="<?= e($data["BandeAnnonce"]) ?>>" frameborder="0" allowfullscreen class="mx-auto d-block rounded"></iframe>
                 </div>
             </div>
         </div>
 
         </br>
 
-        <div class="row">
-            <div class="col-md-1 mb-4"></div>
-            <div class="col-md-10 mb-4 py-4">
-                <p class="header-section">Section commentaire</p>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 class="text-center">Avis</h1>
+                </div>
             </div>
-            <div class="col-md-1 mb-4"></div>
         </div>
+
+
+        <?php require "view_comments.php";?>
 
     </section>
 
@@ -121,4 +124,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <?php require "view_end.php";?>
+
+
 
