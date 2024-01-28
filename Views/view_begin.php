@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.17.0/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="../Content/css/principal.css">
-    <link rel="stylesheet" type="text/css" href="../Content/css/langue_site.css">
     <link rel="stylesheet" type="text/css" href="../Content/css/footer.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
@@ -40,7 +39,7 @@
         </div>
     </nav>
 
-    <div class="js">
+    <!--<div class="js">
         <div class="language-picker js-language-picker" data-trigger-class="btn btn--subtle">
             <form action="" class="language-picker__form">
                 <label for="language-picker-select">Selectionnez votre langue</label>
@@ -50,7 +49,7 @@
                 </select>
             </form>
         </div>
-    </div>
+    </div>-->
 </header>
 <!-- Fin de l'entête de la page-->
 
