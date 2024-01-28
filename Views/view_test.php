@@ -1,5 +1,2 @@
 <?php
-
-foreach ($_SESSION as $value) {
-    echo var_dump($value);
-}
+echo var_dump($data);

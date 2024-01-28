@@ -12,7 +12,7 @@
             new WOW().init();
         </script>
 
-        <title>Films</title>
+    <title>Films</title>
     </head>
     <br>
 
@@ -42,7 +42,7 @@
                 <div class="col-md-6 mx-auto">
                     <div class="row">
                         <div class="col">
-                            <p> <?= e(date('d F Y',strtotime($data["DateSortie"]))) ?> | <?= e($data["DureeFilm"]) ?> | <?= e($data["GenreFilm"]) ?></p>
+                            <p> <?= e(strftime('%d %B %Y', strtotime($data["DateSortie"]))) ?> | <?= e($data["DureeFilm"]) ?> | <?= e($data["GenreFilm"]) ?></p>
                             <p>De Norman Thavaud</p>
                             <p>Avec Norman Thavaud, Mallory Wanecque, Julia Piaton</p>
                             <h1>Synopsis</h1>
@@ -62,7 +62,7 @@
                             </div>
                             <div class="col-6">
                                 <div class="card" style="width: 120px; height: 120px;">
-                                    <img src="../Content/img/acteurs/Kemar.png" alt="Image 2" class="card-img-top img-fluid rounded" style="width: 120px; height: 120px;">
+                                    <img src="Content/img/acteurs/Kemar.png" alt="Image 2" class="card-img-top img-fluid rounded" style="width: 120px; height: 120px;">
                                 </div>
                             </div>
                         </div>
@@ -70,12 +70,12 @@
                         <div class="row mt-3">
                             <div class="col-6">
                                 <div class="card" style="width: 120px; height: 120px;">
-                                    <img src="../Content/img/acteurs/Kemar.png" alt="Image 3" class="card-img-top img-fluid rounded" style="width: 120px; height: 120px;">
+                                    <img src="Content/img/acteurs/Kemar.png" alt="Image 3" class="card-img-top img-fluid rounded" style="width: 120px; height: 120px;">
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="card" style="width: 120px; height: 120px;">
-                                    <img src="../Content/img/acteurs/Kemar.png" alt="Image 4" class="card-img-top img-fluid rounded" style="width: 120px; height: 120px;">
+                                    <img src="Content/img/acteurs/Kemar.png" alt="Image 4" class="card-img-top img-fluid rounded" style="width: 120px; height: 120px;">
                                 </div>
                             </div>
                         </div>
@@ -107,10 +107,13 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h1 class="text-center">Section commentaire</h1>
+                    <h1 class="text-center">Avis</h1>
                 </div>
             </div>
         </div>
+
+
+        <?php require "view_comments.php";?>
 
     </section>
 
@@ -121,3 +124,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <?php require "view_end.php";?>
+
+
+

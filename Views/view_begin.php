@@ -18,7 +18,7 @@
 <header class="accueil_header">
     <nav class="accueil_nav">
         <div class="contenu-menu">
-            <a href="?controller=home&action=home"><img class="logo_sc" src="Content/img/logo_SpaceCine.png" alt="logo-cs" width="70px" height="70px"></a>
+            <a href="?controller=home&action=home"><img class="logo_sc" src="Content/img/icons/logo_SpaceCine.png" alt="logo-cs" width="70px" height="70px"></a>
             <a href="?controller=list&action=film" title="Films" class="deco">Film</a>
             <a href="?controller=list&action=actu" title="Actu" class="deco">Actu</a>
             <a href="?controller=auth&action=form_login" title="Mon Espace" class="deco">Mon Espace</a>

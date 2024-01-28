@@ -58,7 +58,7 @@ class Controller_auth extends Controller {
 
         if (isset($_POST["submit"])) {
             if ( isset($_POST['identifiant']) && isset($_POST['password']) ) {
-                $data =$m->getUsernamesAndEmails();
+                $data = $m->getUsernamesAndEmails();
 
                 $usernames = array_column($data, "PseudoUtilisateur");
                 $emails = array_column($data, "Email");
