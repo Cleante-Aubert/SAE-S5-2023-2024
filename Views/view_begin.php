@@ -27,6 +27,9 @@
             <a href="?controller=list&action=film" title="Films" class="deco">Film</a>
             <a href="?controller=list&action=actu" title="Actu" class="deco">Actu</a>
             <a href="?controller=auth&action=form_login" title="Forum" class="deco">Forum</a>
+            <a href="?controller=Cinema&action=searchCinemas" title="CinéMap" class="deco">CinéMap</a>
+
+
             <!-- Pour la variable de session -->
             <!--
             <a href="?controller=auth&action=form_logout" title="Profil" class="btn deco">

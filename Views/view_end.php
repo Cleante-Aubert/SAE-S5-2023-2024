@@ -1,5 +1,5 @@
 <!-- JS langue-->
-<?php echo '<script src="../Utils/langue.js"></script>'; ?>
+<!-- echo '<script src="../Utils/langue.js"></script>'; -->
 
 <!-- Fin du corps de la page -->
 
