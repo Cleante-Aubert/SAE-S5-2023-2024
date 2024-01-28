@@ -5,6 +5,8 @@
 $dbHost = 'localhost';
 $dbUser = 'root';
 $dbPassword = '';
+$dbName = 'testmap';
+
 
 // Création de la connexion à la base de données
 $db = new mysqli($dbHost, $dbUser, $dbPassword, $dbName);
