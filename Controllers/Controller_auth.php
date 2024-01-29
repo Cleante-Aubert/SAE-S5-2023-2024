@@ -76,7 +76,7 @@ class Controller_auth extends Controller {
 
                     // Redirection
                         $data = ["message"=>"Authentification réussie."];
-                        $this->render("test", $data);
+                        $this->render("test", $data); // !!! A CHANGER !!!
                     } else {
                         $data = ["message"=>"Mot de passe incorrect"];
                         $this->render("login", $data);

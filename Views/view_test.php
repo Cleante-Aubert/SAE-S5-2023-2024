@@ -1,2 +1,2 @@
 <?php
-echo var_dump($data);
+echo var_dump($_SESSION);
