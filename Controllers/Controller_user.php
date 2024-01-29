@@ -2,24 +2,29 @@
 
 require_once "Models/Model_user.php";
 
-abstract class Controller_user extends Controller{
+class Controller_user extends Controller{
 
+    public function action_default()
+    {
+        $this->action_my_profile();
+    }
 
-/*
-$_SESSION["connected"] = true;
-$_SESSION["Id"] = $user["UtilisateurID"];
-$_SESSION["Nom"] = $user["NomUtilisateur"];
-$_SESSION["Prenom"] = $user["PrenomUtilisateur"];
-$_SESSION["Pseudo"] = $user["PseudoUtilisateur"];
-$_SESSION["Email"] = $user["Email"];
-*/
+    /*
+    $_SESSION["connected"] = true;
+    $_SESSION["Id"] = $user["UtilisateurID"];
+    $_SESSION["Nom"] = $user["NomUtilisateur"];
+    $_SESSION["Prenom"] = $user["PrenomUtilisateur"];
+    $_SESSION["Pseudo"] = $user["PseudoUtilisateur"];
+    $_SESSION["Email"] = $user["Email"];
+    */
 
 
     public function action_my_profile(){
         // Vérifier si l'utilisateur est connecté
         if (isset($_SESSION["connected"]) && $_SESSION["connected"] === true) {
             // Utilisateur connecté, rediriger vers la vue my_profile
-            $this->render("my_profile");
+            $data = [];
+            $this->render("my_profile", $data);
         } else {
             // Utilisateur non connecté, rediriger vers la page de connexion
             $this->render("view_login", ["message" => "Veuillez vous connecter pour accéder à votre profil."]);
@@ -27,7 +32,8 @@ $_SESSION["Email"] = $user["Email"];
     }
 
     public function action_update_profile(){
-            $this->render("update_profile");
+        $data = [];
+        $this->render("update_profile", $data);
     }
 
 

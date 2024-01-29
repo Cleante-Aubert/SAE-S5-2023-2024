@@ -20,7 +20,7 @@
         <form action="?controller=set&action=update_user" method="post">
 
             <div class="form-group">
-                <label class="p-label" for="updateFirstName">Photo de profile</label>
+                <label class="p-label" for="updateFirstName">Photo de profil</label>
 
                 <div class="d-flex justify-content-center">
                     <a title="Profil" class="btn deco">
@@ -38,25 +38,25 @@
 
             <div class="form-group">
                 <label class="p-label" for="updateLastName">Nom</label>
-                <input type="text" name="NomUtilisateur" id="updateLastName" maxlength="60" value="" class="form-control input-lg">
+                <input type="text" name="NomUtilisateur" id="updateLastName" maxlength="60" value="<?php $_SESSION['Nom']?>" class="form-control input-lg">
                 <!-- value doit etre prérempli par la variable du prenom de l'uilisateur -->
             </div>
 
             <div class="form-group">
                 <label class="p-label" for="updateFirstName">Prénom</label>
-                <input type="text" name="PrenomUtilisateur" id="updateFirstName" maxlength="60" value="" class="form-control input-lg">
+                <input type="text" name="PrenomUtilisateur" id="updateFirstName" maxlength="60" value="<?php $_SESSION['Prenom']?>" class="form-control input-lg">
                 <!-- value doit etre prérempli par la variable du prenom de l'uilisateur -->
             </div>
 
             <div class="form-group">
                 <label class="p-label" for="updateNickName">Pseudo</label>
-                <input type="text" name="PseudoUtilisateur" id="updateNickName" maxlength="60" value="" class="form-control input-lg">
+                <input type="text" name="PseudoUtilisateur" id="updateNickName" maxlength="60" value="<?php $_SESSION['Pseudo']?>" class="form-control input-lg">
                 <!-- value doit etre prérempli par la variable du pseudo de l'utilisateur -->
             </div>
 
             <div class="form-group">
                 <label class="p-label" for="updateEmail">Adresse mail</label>
-                <input type="email" name="Email" id="updateEmail" maxlength="60" value="" class="form-control input-lg">
+                <input type="email" name="Email" id="updateEmail" maxlength="60" value="<?php $_SESSION['Email']?>" class="form-control input-lg">
                 <!-- value doit etre prérempli par la variable du pseudo de l'email -->
             </div>
 

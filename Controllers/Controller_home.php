@@ -1,9 +1,11 @@
 <?php
 
+require_once "Models/Model_list.php";
 class Controller_home extends Controller {
 
     public function action_home(){
-        $data = ["message"=>""];
+        $m = Model_list::getExtendedModel();
+        $data = $m->getAffichesEtNomsFilm();
         $this->render("home", $data);
     }
 
@@ -25,6 +27,22 @@ class Controller_home extends Controller {
         $data = ["message"=>""];
         $this->render("waw", $data);
     }
+
+    public function action_map(){
+        $data = ["message"=>""];
+        $this->render("map", $data);
+    }
+
+    public function action_forum(){
+        $data = ["message"=>""];
+        $this->render("forum", $data);
+    }
+
+    public function action_all_forum(){
+        $data = ["message"=>""];
+        $this->render("all_forum", $data);
+    }
+
     public function action_default()
     {
         $this->action_home();

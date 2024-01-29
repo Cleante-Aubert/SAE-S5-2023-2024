@@ -1,18 +1,18 @@
 <?php
-include_once '../Utils/database.php';
+include_once '../SAE/Utils/database.php';
 
-include_once '../Models/Model.php';
+include_once '../SAE/Models/Model_cinema.php';
 
 
 header('Content-Type: application/json');
 
-class Controller_cinema extends Controller {
+class Controller_cinema
 {
     private $model;
 
     public function __construct($db)
     {
-        $this->model = new Model($db);
+        $this->model = new Model_cinema($db);
     }
 
     public function searchCinemas()
@@ -40,7 +40,7 @@ class Controller_cinema extends Controller {
 
 
 // Créer une instance du contrôleur en passant la connexion à la base de données
-$controller = new ControllerCinema($db);
+$controller = new Controller_cinema($db);
 
 // Appeler la méthode de recherche de cinémas
 $controller->searchCinemas();

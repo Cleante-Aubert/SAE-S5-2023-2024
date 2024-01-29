@@ -24,8 +24,8 @@
         <div class="contenu-menu">
             <a href="?controller=home&action=home"><img class="logo_sc" src="../SAE/Content/img/icons/logo_SpaceCine.png" alt="logo-cs" width="70px" height="70px"></a>
             <a href="?controller=list&action=film" title="Films" class="deco">Film</a>
-            <a href="#" title="Forum" class="deco">Forum</a>
-            <a href="?controller=Cinema&action=searchCinemas" title="CinéMap" class="deco">CinéMap</a>
+            <a href="?controller=home&action=forum" title="Forum" class="deco">Forum</a>
+            <a href="?controller=cinema&action=searchCinemas" title="CinéMap" class="deco">CinéMap</a>
             <?php if (isset($_SESSION["Id"]) && !empty($_SESSION["Id"])): ?>
                 <a href="?controller=user&action=my_profile" title="Profil" class="btn deco">
                     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-circle white-icon" viewBox="0 0 16 16">
