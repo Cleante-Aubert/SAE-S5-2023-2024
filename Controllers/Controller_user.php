@@ -39,13 +39,22 @@ $_SESSION["Email"] = $user["Email"];
 
             // TODO: rajouter condition "on Submit"
 
-            $m->update_user_info($_POST["NomUtilisateur"],$_POST["PrenomUtilisateur"],$_POST["PseudoUtilisateur"],$_POST["Email"],$_POST["MotDePasse"]);
+            $currentPasswordFromDB = $m->getPassword($_SESSION["Email"]);
 
-            // TODO : Faire le changement de password
+            // Vérifier si le mot de passe actuel fourni dans le formulaire correspond au mot de passe stocké dans la base de données
+            if (password_verify($_POST["MotDePasse"], $currentPasswordFromDB)) {
+                // Si les mots de passe correspondent, procéder à la mise à jour des informations de l'utilisateur
+                $m->update_user_info($_POST["NomUtilisateur"], $_POST["PrenomUtilisateur"], $_POST["PseudoUtilisateur"], $_POST["Email"], $_POST["updatePassWord"]);
+                $m->updatePassword($_SESSION["Email"],$currentPasswordFromDB);
 
-            $data = ["Vous avez modifié avec succès vos informations."];
+                $data = ["Vous avez modifié avec succès vos informations."];
+                $this->render("update_profile", $data);
+            } else {
+                // Si les mots de passe ne correspondent pas, afficher un message d'erreur
+                $data = ["message" => "Mot de passe actuel incorrect."];
+                $this->render("update_profile", $data);
+            }
 
-            $this->render("form_update_vente", $data);
         }
     }
 
