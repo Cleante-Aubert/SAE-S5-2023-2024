@@ -1,7 +1,7 @@
 <?php require "view_begin.php"; ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -31,14 +31,14 @@
         Types de films
     </div>
     <ul>
-        <li><a href="view_forum.php">Action</a></li>
-        <li><a href="view_forum.php">Aventure</a></li>
-        <li><a href="view_forum.php">Comédie</a></li>
-        <li><a href="view_forum.php">Classique</a></li>
-        <li><a href="view_forum.php">Horreur</a></li>
-        <li><a href="view_forum.php">Fantastique</a></li>
-        <li><a href="view_forum.php">Romance</a></li>
-        <li><a href="view_forum.php">Science Fiction</a></li>
+        <li><a href="view_all_forum.php">Action</a></li>
+        <li><a href="view_all_forum.php">Aventure</a></li>
+        <li><a href="view_all_forum.php">Comédie</a></li>
+        <li><a href="view_all_forum.php">Classique</a></li>
+        <li><a href="view_all_forum.php">Horreur</a></li>
+        <li><a href="view_all_forum.php">Fantastique</a></li>
+        <li><a href="view_all_forum.php">Romance</a></li>
+        <li><a href="view_all_forum.php">Science Fiction</a></li>
     </ul>
 </div>
 
