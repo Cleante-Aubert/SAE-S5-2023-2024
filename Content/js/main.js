@@ -8,7 +8,7 @@ function searchCinemas() {
     var searchInput = document.getElementById('searchInput').value;
 
     $.ajax({
-        url: '../Controllers/CinemaController.php',
+        url: '../Controllers/Controller_cinema.php',
         method: 'POST',
         data: { search_input: searchInput },
         dataType: 'json',

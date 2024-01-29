@@ -47,8 +47,4 @@ class Model_user extends Model
             return $tab[0];
         }
 
-
-
-
-
 }
