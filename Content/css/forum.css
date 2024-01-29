@@ -1,0 +1,79 @@
+/* Styles pour le formulaire de recherche */
+.search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    width: 72%;
+}
+
+.search-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-form button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #085186;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-form button:hover {
+    background-color: #053B76;
+}
+
+.forum-section {
+    background: #ffffff;
+    font-weight: 400;
+    font-size: .8125rem;
+    margin-bottom: 1.25rem;
+    position: relative;
+    border-radius: .5rem;
+    overflow: hidden;
+}
+
+.general-mv {
+    background-color: #085186;
+    height: 3rem;
+    color: #ffffff;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Afficher les éléments en colonne */
+    align-items: center; /* Centrer horizontalement les éléments de la liste */
+}
+
+ul li {
+    width: 100%; /* Fait en sorte que chaque élément de la liste ait une largeur de 100% */
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    color: #085186;
+    box-sizing: border-box; /* Inclut les bordures dans la largeur totale de l'élément */
+}
+
+ul li a {
+    color: #053B76;
+}
+
+ul li:last-child {
+    border-bottom: none; /* Supprimer la bordure du dernier élément pour éviter un trait en bas inutile */
+}
+
