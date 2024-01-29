@@ -26,14 +26,9 @@ class Model_user extends Model
         $req->execute();
     }
 
-
-
-
     public function updatePassword($email,$hashedPassword){
             $bd = $this->getBd();
-            $req = $bd->prepare('UPDATE U JOIN Client USING(num_etudiant) SET Password =:pass where Email= :email ');
-
-            // TODO:changer la requête
+            $req = $bd->prepare('UPDATE utilisateur SET MotDePasse =:pass where Email= :email ');
 
             $req->bindValue(':pass',$hashedPassword);
             $req->bindValue(':email',$email);
@@ -41,8 +36,16 @@ class Model_user extends Model
 
             // Confirm requete réussie
             return (bool) $req->rowCount();
-
     }
+
+    public function getPassword($email){
+            $bd = $this->getBd();
+            $req = $bd->prepare('SELECT MotDePasse FROM utilisateur WHERE Email = :email');
+            $req->bindValue(':email',$email);
+            $req->execute();
+            $tab = $req->fetch(PDO::FETCH_NUM);
+            return $tab[0];
+        }
 
 
 

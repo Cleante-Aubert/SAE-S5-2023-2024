@@ -36,6 +36,9 @@ $_SESSION["Email"] = $user["Email"];
             isset($_POST["Email"]) &&
             isset($_POST["MotDePasse"])
         ) {
+
+            // TODO: rajouter condition "on Submit"
+
             $m->update_user_info($_POST["NomUtilisateur"],$_POST["PrenomUtilisateur"],$_POST["PseudoUtilisateur"],$_POST["Email"],$_POST["MotDePasse"]);
 
             // TODO : Faire le changement de password
