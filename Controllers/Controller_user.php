@@ -37,24 +37,28 @@ $_SESSION["Email"] = $user["Email"];
             isset($_POST["MotDePasse"])
         ) {
 
-            // TODO: rajouter condition "on Submit"
-
             $currentPasswordFromDB = $m->getPassword($_SESSION["Email"]);
 
             // Vérifier si le mot de passe actuel fourni dans le formulaire correspond au mot de passe stocké dans la base de données
             if (password_verify($_POST["MotDePasse"], $currentPasswordFromDB)) {
-                // Si les mots de passe correspondent, procéder à la mise à jour des informations de l'utilisateur
-                $m->update_user_info($_POST["NomUtilisateur"], $_POST["PrenomUtilisateur"], $_POST["PseudoUtilisateur"], $_POST["Email"], $_POST["updatePassWord"]);
-                $m->updatePassword($_SESSION["Email"],$currentPasswordFromDB);
+                // Vérifier si les champs "Nouveau mot de passe" et "Confirmer le mot de passe" sont les identiques
+                if ($_POST["updatePassWord"] === $_POST["confirmPassWord"]) {
 
-                $data = ["Vous avez modifié avec succès vos informations."];
-                $this->render("update_profile", $data);
+                    $m->update_user_info($_POST["NomUtilisateur"], $_POST["PrenomUtilisateur"], $_POST["PseudoUtilisateur"], $_POST["Email"], $_POST["updatePassWord"]);
+                    $m->updatePassword($_SESSION["Email"], $_POST["updatePassWord"]);
+
+                    $data = ["message" => "Vous avez modifié avec succès vos informations.", "color" => "green"];
+                    $this->render("update_profile", $data);
+                } else {
+                    // Si les champs "Nouveau mot de passe" et "Confirmer le mot de passe" ne correspondent pas, afficher un message d'erreur
+                    $data = ["message" => "Les champs 'Nouveau mot de passe' et 'Confirmer le mot de passe' ne correspondent pas.", "color" => "red"];
+                    $this->render("update_profile", $data);
+                }
             } else {
                 // Si les mots de passe ne correspondent pas, afficher un message d'erreur
-                $data = ["message" => "Mot de passe actuel incorrect."];
+                $data = ["message" => "Mot de passe actuel incorrect.", "color" => "red"];
                 $this->render("update_profile", $data);
             }
-
         }
     }
 
