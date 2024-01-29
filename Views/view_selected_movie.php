@@ -16,22 +16,28 @@
     </head>
     <br>
 
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h1 class="text-center"><?= e($data["Titre"]) ?></h1>
-                <!-- Star Rating -->
-                <div class="text-center">
-                    <span class="text-warning" style="font-size: 2em;">&#9733;</span>
-                    <span class="text-warning" style="font-size: 2em;">&#9733;</span>
-                    <span class="text-warning" style="font-size: 2em;">&#9733;</span>
-                    <span class="text-warning" style="font-size: 2em;">&#9733;</span>
-                    <span class="text-secondary" style="font-size: 2em;">&#9733;</span>
-                </div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center"><?= e($data["Titre"]) ?></h1>
+            <!-- Star Rating -->
+            <div class="text-center">
+                <?php
+                $noteMoyenne = $data["NoteMoyenne"];
+                for ($i = 1; $i <= 5; $i++) {
+                    if ($i <= $noteMoyenne) {
+                        echo '<span class="text-warning" style="font-size: 2em;">&#9733;</span>';
+                    } else {
+                        echo '<span class="text-secondary" style="font-size: 2em;">&#9733;</span>';
+                    }
+                }
+                ?>
             </div>
         </div>
     </div>
-    <section class="wow bounceInUp">
+</div>
+
+<section class="wow bounceInUp">
         <div class="container mt-5">
             <div class="row">
                 <div class="col-md-3">

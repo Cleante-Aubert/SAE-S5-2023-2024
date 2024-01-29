@@ -6,6 +6,11 @@
             <h1>Connexion</h1>
         </div>
 
+        <!-- à changer au front les bgs -->
+        <p class="text-center" style="color:red"> <?= e($data["message"]) ?> </p>
+        <!-- à changer au front les bgs -->
+        </br>
+
          <div class="formulaire">
 
             <form action="?controller=auth&action=login" method="post" >
@@ -28,13 +33,13 @@
             <p>Tu n'as de compte ? <a href="?controller=auth&action=form_signup">Inscris-toi</a></p>
             </form>
 
-             <!-- à changer au front les bgs -->
-             <p style="color:red"> <?= e($data["message"]) ?> </p>
-             <!-- à changer au front les bgs -->
+
 
         </div>
     </section>
     </main>
+
+</br>
 
 <?php require "view_end.php";?>
 

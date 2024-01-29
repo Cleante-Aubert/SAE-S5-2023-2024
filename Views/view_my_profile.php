@@ -36,19 +36,46 @@
                 </a>
             </div>
         </div>
+        <?php
+        // Fonction pour convertir une date au format français
+        function convertirDateFormatFrancais($date) {
+            // Convertir la date au format timestamp
+            $timestamp = strtotime($date);
+
+            // Convertir le timestamp en format français
+            $dateFrancaise = date("d/m/Y", $timestamp);
+
+            return $dateFrancaise;
+        }
+
+        // Utilisation de la fonction pour afficher la date formatée dans votre HTML
+        ?>
+
         <div class="col-md-6 mb-4 py-4">
-            <p>Nom Prénom</p>
-            <p>Pseudo</p>
-            <p>Mail</p>
-            <p>Inscrit depuis le : 01/01/2000</p>
+            <p><?php echo $_SESSION["Nom"] . " " . $_SESSION["Prenom"]; ?></p>
+            <h3><?php echo $_SESSION["Pseudo"]; ?></h3>
+            <p><?php echo $_SESSION["Email"]; ?></p>
+            <p>Inscrit depuis le: <?php echo convertirDateFormatFrancais($_SESSION["DateInscription"]); ?></p>
         </div>
+
+
     </div>
 
     <div class="row">
         <div class="col-md-4 mb-4"></div>
         <div class="col-md-4 mb-4">
-            <div class="d-flex justify-content-end p-2">
-                <input type="button" class="btn btn-md p_btn" value="Modifier mes informations">
+            <div class="d-flex justify-content-center p-2">
+                <a href="?controller=user&action=update_profile" class="btn btn-md p_btn">Modifier mes informations</a>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-4"></div>
+        <div class="col-md-4 mb-4">
+            <div class="d-flex justify-content-center p-2">
+                <a href="?controller=auth&action=logout" class="btn btn-md btn-danger">Se déconnecter</a>
             </div>
         </div>
         <div class="col-md-4 mb-4"></div>

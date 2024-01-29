@@ -15,6 +15,22 @@ $_SESSION["Email"] = $user["Email"];
 */
 
 
+    public function action_my_profile(){
+        // Vérifier si l'utilisateur est connecté
+        if (isset($_SESSION["connected"]) && $_SESSION["connected"] === true) {
+            // Utilisateur connecté, rediriger vers la vue my_profile
+            $this->render("my_profile");
+        } else {
+            // Utilisateur non connecté, rediriger vers la page de connexion
+            $this->render("view_login", ["message" => "Veuillez vous connecter pour accéder à votre profil."]);
+        }
+    }
+
+    public function action_update_profile(){
+            $this->render("update_profile");
+    }
+
+
     public function action_form_update_userInfos(){
 
         $m = Model::getModel();

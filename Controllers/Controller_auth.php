@@ -73,10 +73,11 @@ class Controller_auth extends Controller {
                         $_SESSION["Prenom"] = $user["PrenomUtilisateur"];
                         $_SESSION["Pseudo"] = $user["PseudoUtilisateur"];
                         $_SESSION["Email"] = $user["Email"];
+                        $_SESSION["DateInscription"] = $user["DateInscription"];
 
                     // Redirection
                         $data = ["message"=>"Authentification réussie."];
-                        $this->render("test", $data); // !!! A CHANGER !!!
+                        $this->render("my_profile", $data); // !!! A CHANGER !!!
                     } else {
                         $data = ["message"=>"Mot de passe incorrect"];
                         $this->render("login", $data);

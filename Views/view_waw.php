@@ -23,9 +23,7 @@
         <div class="col-md-2 mb-4">
         </div>
         <div class="col-md-8 mb-4 py-4">
-            <p>Lorem ipsum dolor sit amet. Aut assumenda rerum sit distinctio ducimus non voluptas perspiciatis et voluptatibus quisquam est quidem expedita ut voluptatem omnis. Est quas neque aut sint quis sit dolor enim id laudantium dolorum et perferendis voluptas. Aut dolor mollitia ut earum facilis aut odit aliquid.
-
-                Ut vero distinctio ut culpa recusandae ea quas consequatur est saepe assumenda vel neque impedit et sapiente sunt est nihil sapiente. Id autem nesciunt in aliquam repellat quo necessitatibus consequatur et dicta cumque qui consectetur dolores. Qui galisum odit aut sunt voluptatum ut voluptas deserunt eum ullam exercitationem non dolorem quod quo explicabo quibusdam. Aut enim temporibus ad quisquam consequatur sit blanditiis suscipit et veniam alias!</p>
+            <p>Chez SpaceCiné, notre passion pour le cinéma nous unit, et notre équipe dévouée travaille ardemment pour créer une plateforme immersive et dynamique où les fans du septième art peuvent se connecter, partager et célébrer leur amour commun pour le cinéma. Chez SpaceCiné, chaque membre de l'équipe contribue à faire de ce site une destination incontournable pour tous les passionnés de cinéma. Que vous soyez un cinéaste en herbe, un fan curieux ou un expert chevronné, nous vous invitons à rejoindre notre communauté et à partager la magie du cinéma avec nous. Ensemble, créons des souvenirs cinématographiques inoubliables et célébrons l'art qui nous passionne tant. Bienvenue à bord de SpaceCiné, où l'aventure cinématographique prend vie !</p>
         </div>
         <div class="col-md-2 mb-4">
         </div>
@@ -77,7 +75,7 @@
         <!-- Team member 1 -->
         <div class="col-md-2 mb-4 px-0">
             <div class="card text-center movie_list py-0">
-                <img src="../Content/img/Kemar.png" class="card-img-top team-member-img" alt="Team Member 1">
+                <img src="/SAE/Content/img/acteurs/nayannou.png" class="card-img-top team-member-img" alt="Team Member 1">
                 <div class="card-body">
                     <h6 class="card-title">ANDRIAMISA Nayann</h6>
                 </div>
@@ -87,7 +85,7 @@
         <!-- Team member 2 -->
         <div class="col-md-2 mb-4 px-0">
             <div class="card text-center movie_list py-0">
-                <img src="../Content/img/Kemar.png" class="card-img-top team-member-img" alt="Team Member 2">
+                <img src="/SAE/Content/img/acteurs/clt.png" class="card-img-top team-member-img" alt="Team Member 2">
                 <div class="card-body">
                     <h6 class="card-title">AUBER Cléante</h6>
                 </div>
@@ -97,7 +95,7 @@
         <!-- Team member 3 -->
         <div class="col-md-2 mb-4 px-0">
             <div class="card text-center movie_list py-0">
-                <img src="../Content/img/Kemar.png" class="card-img-top team-member-img" alt="Team Member 3">
+                <img src="/SAE/Content/img/acteurs/Varun.jpeg" class="card-img-top team-member-img" alt="Team Member 3">
                 <div class="card-body">
                     <h6 class="card-title">GUPTA Varun Vedic</h6>
                 </div>
@@ -107,7 +105,7 @@
         <!-- Team member 4 -->
         <div class="col-md-2 mb-4 px-0">
             <div class="card text-center movie_list py-0">
-                <img src="../Content/img/Kemar.png" class="card-img-top team-member-img" alt="Team Member 4">
+                <img src="/SAE/Content/img/acteurs/faty.png" class="card-img-top team-member-img" alt="Team Member 4">
                 <div class="card-body">
                     <h6 class="card-title">LO Faty</h6>
                 </div>
@@ -117,7 +115,7 @@
         <!-- Team member 5 -->
         <div class="col-md-2 mb-4">
             <div class="card text-center movie_list py-0">
-                <img src="../Content/img/Kemar.png" class="card-img-top team-member-img" alt="Team Member 5">
+                <img src="/SAE/Content/img/acteurs/Jeff.png" class="card-img-top team-member-img" alt="Team Member 5">
                 <div class="card-body">
                     <h6 class="card-title">PAILLOT Jefferson</h6>
                 </div>

@@ -19,7 +19,13 @@
 </style>
 
 <section class="films-section">
-    <p class="header-section">Films à la une </p>
+    <div class="row">
+        <div class="col-md-2 mb-4"></div>
+        <div class="col-md-8 mb-4 py-4">
+            <p class="header-section">Films à la une</p>
+        </div>
+        <div class="col-md-2 mb-4"></div>
+    </div>
 
     <div id="film-carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner row mx-auto pg-card" style="padding: 50px 200px;">

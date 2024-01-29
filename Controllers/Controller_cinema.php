@@ -6,7 +6,7 @@ include_once '../Models/Model.php';
 
 header('Content-Type: application/json');
 
-class CinemaController
+class Controller_cinema extends Controller {
 {
     private $model;
 
@@ -30,12 +30,17 @@ class CinemaController
             echo json_encode($cinemas);
         }
     }
+
+    public function action_default()
+    {
+        // TODO: Implement action_default() method.
+    }
 }
 
 
 
 // Créer une instance du contrôleur en passant la connexion à la base de données
-$controller = new CinemaController($db);
+$controller = new ControllerCinema($db);
 
 // Appeler la méthode de recherche de cinémas
 $controller->searchCinemas();
