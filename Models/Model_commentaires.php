@@ -19,6 +19,7 @@ class Model_commentaires extends Model {
     }
 
     public function update_avis($ID_user,$Com,$ID_film){
+
         $bd = $this->getBd();
         $requete = $bd->prepare('UPDATE critiques SET Commentaires = :com WHERE UtilisateurID = :id AND FilmID = :film');
 
@@ -31,6 +32,9 @@ class Model_commentaires extends Model {
         $requete->execute();
 
         return (bool) $requete->rowCount();
+
+        // TODO: ajouter à cette fonctiion la possibilité de modifier la note également en passant en paramètres. Utiliser boucle Foreach
+        // TODO: Faire les différents controllers une fois les views en place
     }
 
     public function remove_avis($ID_user,$ID_film){
@@ -41,6 +45,11 @@ class Model_commentaires extends Model {
         $requete->execute();
         return (bool) $requete->rowCount();
     }
+
+
+
+
+
 
 
 
