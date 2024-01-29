@@ -32,6 +32,8 @@
             <h5>REJOINS-NOUS</h5>
             <a href="#"><img src="Content/img/icons/logo_instagram.png" width="40px" height="40px"></a>
             <a href="#"><img src="Content/img/icons/logo_tiktok.png" width="40px" height="40px"></a>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="Content/img/icons/logo_instagram.png" width="40px" height="40px"></a>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="Content/img/icons/logo_tiktok.png" width="40px" height="40px"></a>
         </div>
     </div>
 </footer>

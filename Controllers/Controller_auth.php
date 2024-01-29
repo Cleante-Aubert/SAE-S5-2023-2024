@@ -25,7 +25,7 @@ class Controller_auth extends Controller {
                         $data = ["message"=>"Le pseudo que vous avez choisi est déjà pris. Veuillez en choisir un autre."];
                         $this->render("signup", $data);
                     } elseif ($value["Email"] == $_POST["Email"]){
-                        $data = ["message"=>"L'adresse mail que vous avez renseigné est déjà attribué. Veuillez en utiliser un autre."];
+                        $data = ["message"=>"L'adresse mail que vous avez renseigné est déjà attribué. Veuillez en utiliser un autre.", "color"=>"red"];
                         $this->render("signup", $data);
                     }
                 }
@@ -36,9 +36,9 @@ class Controller_auth extends Controller {
                     $infos[$val] = $_POST[$val];
                 }
                 $infos['MotDePasse'] = password_hash($_POST['MotDePasse'], PASSWORD_DEFAULT );
-                //$infos['pdp'] = "Content/Images/Pdp/no-pdp.jpg"; // Partie à développer plus tard avec les photos de profil
+                $infos['PhotoDeProfil'] = "Content/img/photosDeProfil/no-pdp.png";
                 $m->inscription($infos);
-                $data = ["message"=>"Votre compte a bien été crée, vous pouvez vous connecter"];
+                $data = ["message"=>"Votre compte a bien été crée, vous pouvez vous connecter", "color"=>"green"];
                 $this->render("login", $data);
 
 
@@ -69,14 +69,16 @@ class Controller_auth extends Controller {
                     // Remplissage de la session
                         $_SESSION["connected"] = true;
                         $_SESSION["Id"] = $user["UtilisateurID"];
-                        $_SESSION["Nom"] = $user["NomUtilisateur"];
-                        $_SESSION["Prenom"] = $user["PrenomUtilisateur"];
-                        $_SESSION["Pseudo"] = $user["PseudoUtilisateur"];
+                        $_SESSION["NomUtilisateur"] = $user["NomUtilisateur"];
+                        $_SESSION["PrenomUtilisateur"] = $user["PrenomUtilisateur"];
+                        $_SESSION["PseudoUtilisateur"] = $user["PseudoUtilisateur"];
                         $_SESSION["Email"] = $user["Email"];
+                        $_SESSION["DateInscription"] = date('d/m/Y', strtotime($user["DateInscription"]));
+                        $_SESSION["PhotoDeProfil"] = $user["PhotoDeProfil"];
 
                     // Redirection
-                        $data = ["message"=>"Authentification réussie."];
-                        $this->render("test", $data); // !!! A CHANGER !!!
+                        $data = ["message"=>"Authentification réussie.", "color"=>"green"];
+                        $this->render("my_profile", $data); // !!! A CHANGER !!!
                     } else {
                         $data = ["message"=>"Mot de passe incorrect"];
                         $this->render("login", $data);

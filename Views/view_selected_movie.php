@@ -85,12 +85,12 @@
         </div>
         </br>
 
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <h1 class="text-center">Bande annonce</h1>
-                </div>
+        <div class="row">
+            <div class="col-md-1 mb-4"></div>
+            <div class="col-md-10 mb-4 py-4">
+                <p class="header-section">Bande annonce</p>
             </div>
+            <div class="col-md-1 mb-4"></div>
         </div>
 
         <div class="container mt-5">
@@ -104,12 +104,12 @@
 
         </br>
 
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <h1 class="text-center">Section commentaire</h1>
-                </div>
+        <div class="row">
+            <div class="col-md-1 mb-4"></div>
+            <div class="col-md-10 mb-4 py-4">
+                <p class="header-section">Section commentaire</p>
             </div>
+            <div class="col-md-1 mb-4"></div>
         </div>
 
     </section>

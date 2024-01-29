@@ -12,7 +12,7 @@ require_once "Controllers/Controller.php";
 session_start();
 
 //Liste des contrôleurs -- A RENSEIGNER
-$controllers = ['home','auth','list'];
+$controllers = ['home','auth','list','profil'];
 //Nom du contrôleur par défaut-- A RENSEIGNER
 $controller_default = "home";
 

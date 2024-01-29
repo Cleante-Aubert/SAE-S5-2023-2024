@@ -1,0 +1,34 @@
+.nuage {
+    text-align: center;
+    box-sizing: border-box;
+    width: 150px;
+    height: 150px;
+    padding: 80px 1em 0 1em;
+    margin: 0 100px;
+    position: relative;
+    background-color: #a4c9cf;
+    border-radius: 100% 100% 0 0;
+}
+.nuage::before,
+.nuage::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    background-color: #a4c9cf;
+    border-radius: 100%;
+}
+
+.nuage::before {
+    width: 125px;
+    height: 125px;
+    left: -80px;
+    border-bottom-right-radius: 0;
+}
+
+.nuage::after {
+    width: 100px;
+    height: 100px;
+    right: -60px;
+    border-bottom-left-radius: 0;
+}
