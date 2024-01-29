@@ -6,7 +6,13 @@
 <link rel="stylesheet" href="Content/css/signup.css">
 
 <section class="inscription">
-  <h1 class="text-center mb-0">Formulaire d'inscription</h1>
+    <div class="row">
+        <div class="col-md-1 mb-4"></div>
+        <div class="col-md-10 mb-4 py-4">
+            <p class="header-section">Formulaire d'inscription</p>
+        </div>
+        <div class="col-md-1 mb-4"></div>
+    </div>
   <div class="formulaire">
   <form action="?controller=auth&action=signup" method="post" >
 
