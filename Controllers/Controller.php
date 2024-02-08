@@ -61,6 +61,6 @@ abstract class Controller
             'title' => "Erreur",
             'message' => $message,
         ];
-        $this->render("message", $data);
+        $this->render("begin", $data);
     }
 }

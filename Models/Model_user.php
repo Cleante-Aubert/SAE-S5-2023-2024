@@ -47,4 +47,22 @@ class Model_user extends Model
             return $tab[0];
         }
 
+    public function updateProfil($infos)
+    {
+        $bd = $this->getBd();
+        $requete = $bd->prepare('UPDATE utilisateur SET NomUtilisateur=:NomUtilisateur, PrenomUtilisateur=:PrenomUtilisateur, PseudoUtilisateur=:PseudoUtilisateur, Email=:Email WHERE UtilisateurID=' .$_SESSION['Id']);
+        $marqueurs = ['NomUtilisateur','PrenomUtilisateur', 'PseudoUtilisateur', 'Email'];
+        foreach ($marqueurs as $val) {
+            $requete->bindValue(':' .$val, $infos[$val]);
+        }
+        $_SESSION["Nom"] = $infos["NomUtilisateur"];
+        $_SESSION["Prenom"] = $infos["PrenomUtilisateur"];
+        $_SESSION["Pseudo"] = $infos["PseudoUtilisateur"];
+        $_SESSION["Email"] = $infos["Email"];
+        $requete->execute();
+        return (bool) $requete->rowCount();
+    }
+
+
+
 }

@@ -15,9 +15,13 @@
         <div class="col-md-1 mb-4"></div>
     </div>
 
+    <!-- à changer au front les bgs -->
+    <p class="text-center" style="color:red"> <?= e($data["message"]) ?> </p>
+    <!-- à changer au front les bgs -->
+
     <div class="formulaire">
         <!-- nom de l'action à redefinir dans le back -->
-        <form action="?controller=set&action=update_user" method="post">
+        <form action="?controller=user&action=form_update_userInfos" method="post">
 
             <div class="form-group">
                 <label class="p-label" for="updateFirstName">Photo de profil</label>
@@ -38,49 +42,50 @@
 
             <div class="form-group">
                 <label class="p-label" for="updateLastName">Nom</label>
-                <input type="text" name="NomUtilisateur" id="updateLastName" maxlength="60" value="<?php $_SESSION['Nom']?>" class="form-control input-lg">
-                <!-- value doit etre prérempli par la variable du prenom de l'uilisateur -->
+                <input type="text" name="NomUtilisateur" id="updateLastName" maxlength="60" value="<?php echo $_SESSION["Nom"]; ?>" class="form-control input-lg">
+                <!-- value doit etre prérempli par la variable du prenom de l'utilisateur -->
             </div>
 
             <div class="form-group">
                 <label class="p-label" for="updateFirstName">Prénom</label>
-                <input type="text" name="PrenomUtilisateur" id="updateFirstName" maxlength="60" value="<?php $_SESSION['Prenom']?>" class="form-control input-lg">
-                <!-- value doit etre prérempli par la variable du prenom de l'uilisateur -->
+                <input type="text" name="PrenomUtilisateur" id="updateFirstName" maxlength="60" value="<?php echo $_SESSION['Prenom']; ?>" class="form-control input-lg">
+                <!-- value doit etre prérempli par la variable du prenom de l'utilisateur -->
             </div>
 
             <div class="form-group">
                 <label class="p-label" for="updateNickName">Pseudo</label>
-                <input type="text" name="PseudoUtilisateur" id="updateNickName" maxlength="60" value="<?php $_SESSION['Pseudo']?>" class="form-control input-lg">
+                <input type="text" name="PseudoUtilisateur" id="updateNickName" maxlength="60" value="<?php echo $_SESSION['Pseudo']; ?>" class="form-control input-lg">
                 <!-- value doit etre prérempli par la variable du pseudo de l'utilisateur -->
             </div>
 
             <div class="form-group">
                 <label class="p-label" for="updateEmail">Adresse mail</label>
-                <input type="email" name="Email" id="updateEmail" maxlength="60" value="<?php $_SESSION['Email']?>" class="form-control input-lg">
-                <!-- value doit etre prérempli par la variable du pseudo de l'email -->
+                <input type="email" name="Email" id="updateEmail" maxlength="60" value="<?php echo $_SESSION['Email']; ?>" class="form-control input-lg">
+                <!-- value doit etre prérempli par la variable de l'email -->
             </div>
 
             <div class="form-group">
-                <label class="p-label" for="PassWord">Mot de passe actuel</label>
-                <input type="password" name="MotDePasse" id="PassWord" maxlength="60" value="" class="form-control input-lg">
+                <label class="p-label" for="PassWord">Mot de passe actuel <strong>(À renseigner si vous souhaitez modifier votre profil)</strong></label>
+                <input type="password" name="MotDePasse" id="PassWord" minlength="8" maxlength="60" value="" class="form-control input-lg">
             </div>
 
             <div class="form-group">
                 <label class="p-label" for="updatePassWord">Nouveau mot de passe </label>
-                <input type="password" name="MotDePasse" id="updatePassWord" maxlength="60" value="" class="form-control input-lg">
+                <input type="password" name="NouveauMotDePasse" id="updatePassWord" minlength="8" maxlength="60" value="" class="form-control input-lg">
             </div>
 
             <div class="form-group">
                 <label class="p-label" for="confirmPassWord">Confirmer le mot de passe</label>
-                <input type="password" name="MotDePasse" id="confirmPassWord" maxlength="60" value="" class="form-control input-lg">
+                <input type="password" id="confirmPassWord" minlength="8" maxlength="60" value="" class="form-control input-lg">
             </div>
             <div class="d-flex justify-content-end p-2">
-                <input type="submit" class="btn btn-md p_btn" value="Modifier mes informations">
-            </div>
-            <div class="d-flex justify-content-end p-2">
-                <input type="button" class="btn btn-md p_btn" value="Revenir sur la page de mon profil">
+                <input type="submit" name="submit" class="btn btn-md p_btn" value="Modifier mes informations" >
             </div>
         </form>
+
+        <div class="d-flex justify-content-end p-2">
+            <a href="?controller=user&action=my_profile" class="btn btn-md p_btn">Revenir sur la page de mon profil</a>
+        </div>
     </div>
 </section>
 </br>
