@@ -96,72 +96,63 @@
         <div class="carousel-inner row mx-auto pg-card" style="padding: 50px 200px;">
 
             <!-- la class carousel-item designe le contenu d'une slide et active permets de d'indiquer la première slide affichée -->
+            <!-- <div class="carousel-item active">
+
+                    <div class="row align-items-center">
+                        <div class="col-md-6 mb-4 py-4">
+
+                            <div class="card mb-3 movie_list">
+                                <div class="card rounded" style="width: 200px; height: 300px; position: relative;">
+                                    <img src="../Content/img/Napoleon.jpg" class="card-img mx-auto d-block" alt="Card Image" style="object-fit: cover;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4 py-4 d-flex align-items-center">
+                            <div>
+                                <h1 style="text-align: center;">Nom du film</h1>
+                                <p>[Date de la critique]</p>
+                                <p>note</p>
+                                <p>Commentaire</p>
+                            </div>
+                        </div>
+                    </div>
+            </div> -->
+
             <div class="carousel-item active">
-                    <!-- template du contenu du carrousel -->
-                    <div class="row align-items-center">
-                        <div class="col-md-6 mb-4 py-4">
-                            <!-- Récuperer l'image du film en faisant une jointure entre la table film et critique -->
-                            <div class="card mb-3 movie_list">
-                                <div class="card rounded" style="width: 200px; height: 300px; position: relative;">
-                                    <img src="../Content/img/Napoleon.jpg" class="card-img mx-auto d-block" alt="Card Image" style="object-fit: cover;">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-4 py-4 d-flex align-items-center">
-                            <div>
-                                <h1 style="text-align: center;">Nom du film</h1>
-                                <p>[Date de la critique]</p>
-                                <p>note</p>
-                                <p>Commentaire</p>
+                <!-- template du contenu du carrousel -->
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-4 py-4">
+                        <!-- Récuperer l'image du film en faisant une jointure entre la table film et critique -->
+                        <div class="card mb-3 movie_list">
+                            <div class="card rounded" style="width: 200px; height: 300px; position: relative;">
+                                <img src="Content/img/affichesFilms/Napoleon.jpg" class="card-img mx-auto d-block" alt="Card Image" style="object-fit: cover;">
                             </div>
                         </div>
                     </div>
-            </div>
-            <!-- contenu de la 2e slide -->
-            <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6 mb-4 py-4">
-                            <!-- Récuperer l'image du film en faisant une jointure entre la table film et critique -->
-                            <div class="card mb-3 movie_list">
-                                <div class="card rounded" style="width: 200px; height: 300px; position: relative;">
-                                    <img src="../Content/img/Napoleon.jpg" class="card-img mx-auto d-block" alt="Card Image" style="object-fit: cover;">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 mb-4 py-4 d-flex align-items-center">
+                    <div class="col-md-6 mb-4 py-4 d-flex align-items-center">
+                        <div>
+                            <p>08/02/2024</p>
+                            <h1 style="text-align: center;">Napoleon</h1>
                             <div>
-                                <h1 style="text-align: center;">Nom du film</h1>
-                                <p>[Date de la critique]</p>
-                                <p>note</p>
-                                <p>Commentaire</p>
+                                <span class="text-warning" style="font-size: 1em;">&#9733;</span>
+                                <span class="text-warning" style="font-size: 1em;">&#9733;</span>
+                                <span class="text-warning" style="font-size: 1em;">&#9733;</span>
+                                <span class="text-warning" style="font-size: 1em;">&#9733;</span>
+                                <span class="text-warning" style="font-size: 1em;">&#9733;</span>
                             </div>
-                        </div>
-
-                    </div>
-            </div>
-            <!-- contenu de la 3e slide -->
-            <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <div class="col-md-6 mb-4 py-4">
-                            <!-- Récuperer l'image du film en faisant une jointure entre la table film et critique -->
-                            <div class="card mb-3 movie_list">
-                                <div class="card rounded" style="width: 200px; height: 300px; position: relative;">
-                                    <img src="../Content/img/Napoleon.jpg" class="card-img mx-auto d-block" alt="Card Image" style="object-fit: cover;">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-4 py-4 d-flex align-items-center">
-                            <div>
-                                <h1 style="text-align: center;">Nom du film</h1>
-                                <p>[Date de la critique]</p>
-                                <p>note</p>
-                                <p>Commentaire</p>
-                            </div>
+                            </br>
+                            <p>Masterclass !</p>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- contenu de la 2e slide -->
+
+
+
+            <!-- contenu de la 3e slide -->
+
 
         <!--code permettant de generer les boutons suivant et precedent du carrousel -->
         <a class="carousel-control-prev" href="#film-carousel" role="button" data-slide="prev">
