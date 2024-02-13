@@ -40,6 +40,5 @@
     </main>
 
 </br>
-
 <?php require "view_end.php";?>
 

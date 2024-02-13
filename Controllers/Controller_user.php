@@ -32,48 +32,67 @@ class Controller_user extends Controller{
     }
 
     public function action_update_profile(){
-        $data = [];
+        $data = ["message"=>""];
         $this->render("update_profile", $data);
     }
 
 
     public function action_form_update_userInfos(){
 
-        $m = Model::getModel();
+        $m = Model_user::getExtendedModel();
 
-        if (!isset($_SESSION['connected']) || !isset($_SESSION['Id']) || !isset($_SESSION['Nom']) || !$_SESSION['Prenom'] || $_SESSION['Pseudo'] || $_SESSION['Email']) {
-            $data = ["message"=>"Veuillez renseigner les champs pour vous authentifier."];
-            $this->render("view_login",$data);
+        if (!$_SESSION['connected']) { // Vérifie qu'on est connecté, et si c'est pas le cas redirect vers login
+            $data = ["message"=>"Veuillez-vous authentifier."];
+            $this->render("login", $data);
         }
 
-        if( isset($_SESSION["connected"])&&
-            isset($_SESSION["Id"]) &&
-            isset($_SESSION["Nom"]) &&
-            isset($_SESSION["Prenom"]) &&
-            isset($_SESSION["Pseudo"]) &&
-            isset($_SESSION["Email"]) &&
-            isset($_POST["NomUtilisateur"]) &&
+        if( isset($_POST["NomUtilisateur"]) &&
             isset($_POST["PrenomUtilisateur"]) &&
             isset($_POST["PseudoUtilisateur"]) &&
-            isset($_POST["Email"]) &&
-            isset($_POST["MotDePasse"])
+            isset($_POST["Email"])
         ) {
+            if (!isset($_POST["MotDePasse"])) {
+                $data = ["message"=>"Veuillez renseigner votre mot de passe."];
+                $this->render("update_profile", $data);
+            }
 
             // TODO: rajouter condition "on Submit"
 
-            $currentPasswordFromDB = $m->getPassword($_SESSION["Email"]);
+            if (isset($_POST["submit"])) {
 
-            // Vérifier si le mot de passe actuel fourni dans le formulaire correspond au mot de passe stocké dans la base de données
-            if (password_verify($_POST["MotDePasse"], $currentPasswordFromDB)) {
-                // Si les mots de passe correspondent, procéder à la mise à jour des informations de l'utilisateur
-                $m->update_user_info($_POST["NomUtilisateur"], $_POST["PrenomUtilisateur"], $_POST["PseudoUtilisateur"], $_POST["Email"], $_POST["updatePassWord"]);
-                $m->updatePassword($_SESSION["Email"],$currentPasswordFromDB);
+                $currentPasswordFromDB = $m->getPassword($_SESSION["Email"]);
 
-                $data = ["Vous avez modifié avec succès vos informations."];
-                $this->render("update_profile", $data);
-            } else {
-                // Si les mots de passe ne correspondent pas, afficher un message d'erreur
-                $data = ["message" => "Mot de passe actuel incorrect."];
+                // Vérifier si le mot de passe actuel fourni dans le formulaire correspond au mot de passe stocké dans la base de données
+                if (password_verify($_POST["MotDePasse"], $currentPasswordFromDB)) {
+
+                    $infos =[];
+                    $noms =['NomUtilisateur', 'PrenomUtilisateur', 'PseudoUtilisateur', 'Email'];
+                    foreach ($noms as $val) {
+                        $infos[$val] = $_POST[$val];
+                    }
+                    $m->updateProfil($infos);
+
+                    if (isset($_POST["NouveauMotDePasse"]) && $_POST["NouveauMotDePasse"] != "") {
+                        $NewMotDePasse = password_hash($_POST["NouveauMotDePasse"], PASSWORD_DEFAULT);
+                        $m->updatePassword($_SESSION["Email"], $NewMotDePasse);
+                    }
+
+                    // Si les mots de passe correspondent, procéder à la mise à jour des informations de l'utilisateur
+                    //$m->update_user_info($_POST["NomUtilisateur"], $_POST["PrenomUtilisateur"], $_POST["PseudoUtilisateur"], $_POST["Email"], $_POST["updatePassWord"]);
+                    //$m->updatePassword($_SESSION["Email"],$currentPasswordFromDB);
+
+                    $data = ["message"=>"Vous avez modifié avec succès vos informations."];
+                    $this->render("update_profile", $data);
+                } else {
+                    // Si les mots de passe ne correspondent pas, afficher un message d'erreur
+                    $data = ["message" => "Mot de passe actuel incorrect."];
+                    $this->render("update_profile", $data);
+                }
+
+            }
+            else {
+                // Afficher un message d'erreur si le formulaire n'a pas été soumis
+                $data = ["message" => "Le formulaire n'a pas été soumis."];
                 $this->render("update_profile", $data);
             }
 
